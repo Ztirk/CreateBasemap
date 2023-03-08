@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.lazywasabi.net/fonts/Anuphan/Anuphan.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript"
+        src="https://api.nostramap.com/nostraapi/v2.0?key=GGS4RPHkjGV(JUtydlm9HOB5QPXfmd91Gm)DGmNqG7nk8bNkNpf34VaYIBmyPpmKURAXkOSvVSZlmn0soVqlIEm=====2"></script>
+    <title>CreatebaseMap</title>
+</head>
+
+<body>
+
+    <div class="panel">
+        <div class="header">Select Map Type</div>
+        <div class="btn-group">
+            <button id="streetmap" onclick="onChangeStreetmap('streetmap')" class="active">Streetmap</button>
+            <button id="openstreetmap" onclick="onChangeOpenstreetmap('openstreetmap')">OpenStreetmap</button>
+            <button id="imagery" onclick="onChangeImagery('imagery')">Imagery</button>
+            <button id="hybridline"  onclick="onChangeHybridline('hybridline')">Hybird</button>
+            <button id="premiummap" onclick="onChangePremiumMap('premiummap')">PremiumMap</button>
+        </div>
+        <hr class="line">
+
+        <div class="row"> 
+            <div class="col-1">
+                <label>Language</label>
+            </div>
+            <div class="col-2">
+                <div style="width: 40%;">
+                    <label class="radio">
+                        <span class="radio__input">
+                            <input type="radio" name="radio" value="EN" onclick="onChangeLang(event)" checked/>
+                            <span class="radio__control"></span>
+                        </span>
+                        <span class="radio__label">English</span>
+                    </label>
+                </div>
+                <div style="width: 50%;">
+                    <label class="radio">
+                        <span class="radio__input">
+                            <input type="radio" name="radio" value="LOCAL" onclick="onChangeLang(event)"/>
+                            <span class="radio__control"></span>
+                        </span>
+                        <span class="radio__label">Local</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:0.5rem"> 
+            <div class="col-1" style="align-items: center;">
+                <label>Country</label>
+            </div>
+            <div class="col-2">
+                <input type="text" id="countryRead" name="countryRead" value="TH" readonly>
+                <select id="country" name="country" style="margin-left: 10px;" onchange="onChangeCountry(event)">
+                    <option value="TH">Thailand</option>
+                    <option value="BN">Brunei</option>
+                    <option value="KH">Cambodia</option>
+                    <option value="ID">Indonesia</option>
+                    <option value="LA">Laos</option>
+                    <option value="MY">Malaysia</option>
+                    <option value="MM">Myanmar</option>
+                    <option value="PH">Philippines</option>
+                    <option value="SG">Singapore</option>
+                    <option value="VN">Vietnam</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+</body>
+
+</html>
+<script src="./script.js"></script>
